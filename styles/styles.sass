@@ -1,0 +1,63 @@
+@import 'mixins'
+
+.polices
+	padding: size(60) 0 size(80)
+	background-color: var(--bg-color-dark)
+	&__outer
+		&-title
+			text-align: center
+	&__items
+		overflow: hidden
+	&__item
+		min-height: 100%
+		height: auto
+
+.police
+	display: flex
+	flex-direction: column
+	height: 100%
+	background-color: var(--bg-color)
+	border-radius: var(--block-radius-bigest)
+	padding: size(31)
+	&__info
+		display: flex
+		flex-wrap: wrap
+		align-content: flex-start
+		flex: 0 1 100%
+		&-title
+			display: -webkit-box
+			-webkit-line-clamp: 3
+			-webkit-box-orient: vertical
+			overflow: hidden
+			margin-bottom: auto
+		&-date,
+		&-time
+			width: 100%
+
+.covid
+	@include block-padding
+	&__item
+		&-outer
+			display: flex
+			flex-direction: column
+			align-items: center
+			height: 100%
+			box-shadow: var(--block-shadow)
+			border-radius: var(--block-radius-bigest)
+			padding: size(51) size(34) size(48)
+		&-picture
+			margin-bottom: size(60)
+			img
+				max-width: 100%
+				height: auto
+		&-description
+			text-align: center
+			font-weight: 400
+			line-height: 1.5
+	&__outer
+		&-title
+			text-align: center
+			margin-bottom: size(85)
+
+
+

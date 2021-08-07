@@ -1,0 +1,28 @@
+@mixin lg
+	@media screen and (min-width: 1024px)
+		@content
+
+@mixin md
+	@media screen and (max-width: 1023px)
+		@content
+
+
+@mixin xs
+	@media screen and (max-width: 767px)
+		@content
+
+@mixin columns($size)
+	@for $i from 1 through 12
+		$column-percent: (100% / (12 / $i))
+		.column-#{$size}-#{$i}
+			width: $column-percent
+		.offset-#{$size}-#{$i}
+			margin-left: $column-percent
+
+
+@function size($number)
+	@return $number * 0.0694vw
+
+
+@mixin block-padding
+	padding: size(80) 0

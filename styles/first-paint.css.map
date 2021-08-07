@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,MAAM;EACL,OAAO,EAAE,IAAI",
+"sources": ["first-paint.sass"],
+"names": [],
+"file": "first-paint.css"
+}
