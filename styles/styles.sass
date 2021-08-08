@@ -121,7 +121,9 @@
 
 .assistance
 	padding: size(36) 0
-	background-color: var(--bg-color-dark)
+	background: url('../assets/assistance_bg.png'), var(--bg-color-dark)
+	background-position: top center
+	background-size: contain
 	&__outer
 		display: flex
 		flex-wrap: wrap
@@ -129,6 +131,9 @@
 		&-title
 			max-width: size(800)
 			text-align: center
+			margin-bottom: size(60)
+	&__title
+
 .reviews
 	@include block-padding
 	&__outer
