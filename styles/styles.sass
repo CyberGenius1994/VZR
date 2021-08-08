@@ -119,6 +119,53 @@
 			text-align: center
 			margin-bottom: size(85)
 
+.assistance
+	padding: size(36) 0
+	background-color: var(--bg-color-dark)
+	&__outer
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		&-title
+			max-width: size(800)
+			text-align: center
+.reviews
+	@include block-padding
+	&__outer
+		&-title
+			text-align: center
+			margin-bottom: size(86)
+
+.review
+	margin-bottom: size(40)
+	&__block
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		background-color: var(--bg-color)
+		box-shadow: var(--block-shadow)
+		border-radius: var(--block-radius)
+		padding: size(34) size(40)
+		height: 100%
+		&-title
+			align-self: flex-start
+		&-date,
+		&-site
+			width: 100%
+			text-align: right
+		&-link
+			margin-top: auto
+		&-info
+			display: inline-flex
+			flex-direction: column
+			align-items: flex-end
+			align-self: flex-start
+		&-description
+			display: -webkit-box
+			-webkit-line-clamp: 8
+			-webkit-box-orient: vertical
+			overflow: hidden
+			margin: size(20) 0 size(35)
 .questions
 	@include block-padding
 	background-color: var(--bg-color-dark)
@@ -167,8 +214,8 @@
 					width: size(20)
 					height: size(20)
 					display: block
-					border-left: size(1) solid var(--text-color)
-					border-bottom: size(1) solid var(--text-color)
+					border-left: size(1) solid var(--text-black)
+					border-bottom: size(1) solid var(--text-black)
 					transform: rotate(45deg)
 					transition: transform .3s ease-in-out
 			&::marker,

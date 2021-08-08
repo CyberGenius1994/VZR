@@ -4,6 +4,7 @@
   --bg-color-dark: #CAE1E3;
   --text-color: #2A4D64;
   --text-color-dark: #28306D;
+  --text-black: #000000;
   --text-color-green: rgba(68, 115, 118, 0.7);
   --title-font: "Ubuntu", sans-serif;
   --text-font: "Montserrat", sans-serif;
@@ -386,6 +387,55 @@ h6 {
 p {
   font-size: var(--p-font-size);
   line-height: 1.7;
+}
+
+.more__content {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-size: var(--h6-font-size);
+  font-family: var(--title-font);
+  line-height: 1.62;
+  color: var(--text-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+}
+.more__content:after {
+  content: "";
+  width: 0.694vw;
+  height: 0.694vw;
+  display: block;
+  border-left: 0.0694vw solid var(--text-black);
+  border-bottom: 0.0694vw solid var(--text-black);
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease-in-out;
+  margin-left: 1.041vw;
+}
+.more__content:hover {
+  color: var(--text-color-dark);
+}
+.more__link {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-size: var(--small-font-size);
+  font-family: var(--title-font);
+  line-height: 1.83;
+  color: var(--text-color-dark);
+  font-weight: 400;
+  text-decoration: none;
+}
+.more__link:after {
+  margin-left: 0.347vw;
+  content: url("../assets/arrow-link.svg");
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
+.more__link:hover:after {
+  transform: translateX(0.694vw);
 }
 
 /*# sourceMappingURL=default.css.map */

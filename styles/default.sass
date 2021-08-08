@@ -15,6 +15,7 @@ $small-font-size: size(12)
 	--bg-color-dark: #CAE1E3
 	--text-color: #2A4D64
 	--text-color-dark: #28306D
+	--text-black: #000000
 	--text-color-green: rgba(68, 115, 118, 0.7)
 	--title-font: 'Ubuntu', sans-serif
 	--text-font: 'Montserrat', sans-serif
@@ -85,3 +86,48 @@ p
 	font-size: var(--p-font-size)
 	line-height: 1.7
 
+.more
+	&__content
+		display: flex
+		align-items: center
+		align-content: center
+		justify-content: center
+		font-size: var(--h6-font-size)
+		font-family: var(--title-font)
+		line-height: 1.62
+		color: var(--text-color)
+		font-weight: 600
+		text-decoration: none
+		transition: all .5s ease-in-out
+		&:after
+			content: ''
+			width: size(10)
+			height: size(10)
+			display: block
+			border-left: size(1) solid var(--text-black)
+			border-bottom: size(1) solid var(--text-black)
+			transform: rotate(-45deg)
+			transition: transform .3s ease-in-out
+			margin-left: size(15)
+		&:hover
+			color: var(--text-color-dark)
+	&__link
+		display: flex
+		align-items: center
+		align-content: center
+		justify-content: center
+		font-size: var(--small-font-size)
+		font-family: var(--title-font)
+		line-height: 1.83
+		color: var(--text-color-dark)
+		font-weight: 400
+		text-decoration: none
+		&:after
+			margin-left: size(5)
+			content: url('../assets/arrow-link.svg')
+			transform: translateX(0)
+			transition: transform .3s ease-in-out
+
+		&:hover
+			&:after
+				transform: translateX(size(10))
