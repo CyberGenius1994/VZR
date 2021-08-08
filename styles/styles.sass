@@ -11,6 +11,18 @@
 	&__item
 		min-height: 100%
 		height: auto
+	&__buttons
+		display: flex
+		align-items: center
+		justify-content: center
+	&__button
+		&-next,
+		&-prev
+			cursor: pointer
+			padding: size(10)
+			margin: size(10) size(12)
+			img
+				pointer-events: none
 
 .police
 	display: flex
@@ -36,15 +48,48 @@
 		flex-direction: column
 		align-content: flex-start
 		flex: 0 1 100%
+		margin-top: size(14)
 		&-title
 			display: -webkit-box
 			-webkit-line-clamp: 3
 			-webkit-box-orient: vertical
 			overflow: hidden
 			margin-bottom: auto
+			line-height: 1.62
+		p
+			color: var(--text-color-green)
 		&-date,
 		&-time
 			width: 100%
+			margin-bottom: size(2)
+		&-date
+			margin-top: size(12)
+		&-insurance
+			display: inline-flex
+		&-line
+			display: flex
+			align-items: center
+			align-content: center
+			justify-content: space-between
+			margin-bottom: size(20)
+		&-people
+			&-number
+				display: none
+			&-image
+				img
+					width: size(12.5)
+					height: size(15)
+					&~img
+						margin-left: size(7)
+	&__footer
+
+		border-top: size(1) solid rgba(61, 79, 195, 0.7)
+		p
+			--p-font-size: #{size(35)}
+			font-family: var(--title-font)
+			text-align: center
+			line-height: 1.29
+			padding-top: size(6)
 
 .covid
 	@include block-padding
@@ -73,3 +118,87 @@
 		&-title
 			text-align: center
 			margin-bottom: size(85)
+
+.questions
+	@include block-padding
+	background-color: var(--bg-color-dark)
+	&__outer
+		display: flex
+		flex-direction: column
+		align-content: center
+		.more__content
+			margin: 0 auto
+		&-title
+			text-align: center
+	&__block
+		flex-direction: column
+		align-items: center
+		margin: size(15) 0 size(50)
+.question
+	margin-top: size(50)
+	details
+		-webkit-appearance: none
+		appearance: none
+		background: var(--bg-color)
+		box-shadow: var(--dropdown-shadow)
+		border-radius: size(25)
+		&>p
+			padding: 0 size(25) size(45) size(25)
+			user-select: none
+			color: var(--text-color-green)
+
+		summary
+			display: flex
+			-webkit-appearance: none
+			appearance: none
+			padding: size(25) size(25) size(24)
+			cursor: pointer
+			h6
+				display: flex
+				align-items: center
+				align-content: center
+				justify-content: space-between
+				width: 100%
+				font-family: var(--text-font)
+				font-weight: 600
+				user-select: none
+				&:after
+					content: ''
+					width: size(20)
+					height: size(20)
+					display: block
+					border-left: size(1) solid var(--text-color)
+					border-bottom: size(1) solid var(--text-color)
+					transform: rotate(45deg)
+					transition: transform .3s ease-in-out
+			&::marker,
+			&::-webkit-details-marker
+				display: none !important
+		&[open]
+			summary
+				h6
+					&:after
+						transform: rotate(-45deg)
+.files
+	padding: size(20) 0 size(155)
+	background-color: var(--bg-color-dark)
+	&__outer
+		&-title
+			text-align: center
+			margin-bottom: size(70)
+
+.file
+	margin-bottom: size(25)
+	&__link
+		display: inline-flex
+		max-width: size(251)
+		align-items: flex-start
+		text-decoration: none
+		img
+			width: size(20)
+			height: size(20)
+			object-fit: contain
+			margin-top: size(5)
+		&-text
+			padding-left: size(30)
+			color: var(--text-color-green)

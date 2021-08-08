@@ -8,13 +8,10 @@ const swiper = new Swiper('.polices__items', {
   spaceBetween: 22,
   direction: 'horizontal',
   loop: true,
-  // pagination: {
-  //   el: '.swiper-pagination',
-  // },
-  // navigation: {
-  //   nextEl: '.swiper-button-next',
-  //   prevEl: '.swiper-button-prev',
-  // },
+  navigation: {
+    nextEl: '.polices__button-next',
+    prevEl: '.police__button-prev',
+  },
 });
 
 
