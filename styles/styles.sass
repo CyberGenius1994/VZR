@@ -132,7 +132,51 @@
 			max-width: size(800)
 			text-align: center
 			margin-bottom: size(60)
-	&__title
+	&__info
+		padding: 0 size(15) 0 size(55)
+		&-title
+			font-family: var(--title-font)
+			font-weight: 600
+		&-description
+			margin-top: size(25)
+			span
+				display: inline-block
+				margin-bottom: size(25)
+	&__numbers
+		&-item
+			text-align: center
+			font-weight: 700
+			span
+				font-family: var(--text-font)
+				font-weight: 800
+				font-size: size(100)
+				line-height: 1.22
+				color: rgba(40, 48, 109, 0.8)
+				padding-right: size(20)
+	&__review
+		&-outer
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-between
+			padding: size(47) size(49)
+			background-color: var(--bg-color)
+			border-radius: var(--block-radius-bigest)
+			box-shadow: var(--block-shadow)
+		&-title
+			max-width: 80%
+			font-weight: 600
+		&-picture
+			width: size(50)
+			height: size(50)
+			object-fit: contain
+		&-link
+			margin-right: auto
+			margin-top: size(10)
+		&-date
+			width: 100%
+			margin: size(20) 0 size(12)
+		&-description
+			color: var(--text-color-green)
 
 .reviews
 	@include block-padding
@@ -158,6 +202,7 @@
 		&-site
 			width: 100%
 			text-align: right
+			font-size: var(--small-font-size)
 		&-link
 			margin-top: auto
 		&-info
@@ -171,6 +216,7 @@
 			-webkit-box-orient: vertical
 			overflow: hidden
 			margin: size(20) 0 size(35)
+			color: var(--text-color-green)
 .questions
 	@include block-padding
 	background-color: var(--bg-color-dark)
