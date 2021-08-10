@@ -119,6 +119,65 @@
 			text-align: center
 			margin-bottom: size(85)
 
+.abroad
+	@include block-padding
+	padding-top: 0
+	&__left
+		&-title
+			margin-bottom: size(62)
+	&__news
+		display: flex
+		padding: size(30) size(34)
+		background-color: #FCFCFC
+		box-shadow: var(--block-shadow)
+		border-radius: var(--block-radius-bigest)
+		&-image
+			flex: 0 0 42%
+			picture,
+			img
+				display: block
+				width: 100%
+				height: auto
+
+		&-info
+			display: flex
+			flex-direction: column
+			padding-left: size(15)
+		&-title
+			font-weight: 600
+		&-description
+			display: -webkit-box
+			-webkit-line-clamp: 5
+			-webkit-box-orient: vertical
+			overflow: hidden
+			margin: size(15) 0 size(9)
+		&-link
+			font-size: var(--h6-font-size)
+			margin-left: auto
+	&__interesting
+		&-title
+			max-width: 80%
+			font-weight: 400
+			color: var(--text-color-green)
+		&-form
+			display: flex
+			margin-top: size(50)
+			label
+				flex: 0 1 100%
+				padding-right: size(15)
+		&-searches
+			display: inline-block
+			margin-top: size(26)
+			p
+				display: inline-block
+			ul
+				display: inline-block
+				list-style-type: none
+				li
+					display: inline-block
+
+
+
 .assistance
 	padding: size(36) 0
 	background: url('../assets/assistance_bg.png'), var(--bg-color-dark)
@@ -292,11 +351,19 @@
 		max-width: size(251)
 		align-items: flex-start
 		text-decoration: none
-		img
+		color: var(--text-color-green)
+		transition: all .3s ease-in-out
+		&:hover
+			color: #3D4FC3
+		&:active
+			color: #28306D
+		&:disabled
+			color: #C42126
+		svg
+			flex: 0 0 size(20)
 			width: size(20)
 			height: size(20)
 			object-fit: contain
 			margin-top: size(5)
 		&-text
 			padding-left: size(30)
-			color: var(--text-color-green)

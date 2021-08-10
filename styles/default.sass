@@ -15,7 +15,12 @@ $small-font-size: size(12)
 	--bg-color-dark: #CAE1E3
 	--text-color: #2A4D64
 	--text-color-dark: #28306D
+	--text-color-dark-hover: #3D4FC3
+	--text-color-dark-active: #28306D
 	--text-black: #000000
+	--button-color: #3D4FC3
+	--button-color-hover: #28306D
+	--button-color-active: #28306D
 	--text-color-green: rgba(68, 115, 118, 0.7)
 	--title-font: 'Ubuntu', sans-serif
 	--text-font: 'Montserrat', sans-serif
@@ -78,6 +83,41 @@ ul, ol
 	color: var(--text-color-dark)
 	font-family: var(--title-font)
 	font-weight: 400
+input
+	width: 100%
+	font-size: var(--p-font-size)
+	font-family: var(--text-family)
+	padding: 0 size(18)
+	background-color: var(--bg-color)
+	border: size(1) solid #c2c2c2
+	border-radius: size(20)
+	height: size(50)
+	color: #c2c2c2
+	caret-color: var(--button-color)
+	&::placeholder
+		color: #c2c2c2
+	&:focus
+		border-color: var(--button-color)
+button[type="submit"]
+	appearance: none
+	background-color: var(--button-color)
+	height: size(50)
+	padding: 0 size(16)
+	border: none
+	border-radius: size(20)
+	cursor: pointer
+	color: #ffffff
+	transition: all .3s ease-in-out
+	svg
+		fill: currentColor
+		width: size(20)
+		height: auto
+	&:hover
+		color: #c2c2c2
+		background-color: var(--button-color-hover)
+	&:active
+		color: #ffffff
+		background-color: var(--button-color-active)
 
 @for $i from 1 through 6
 	h#{$i}
@@ -122,6 +162,7 @@ p
 		color: var(--text-color-dark)
 		font-weight: 400
 		text-decoration: none
+		transition: color .3s ease-in-out
 		&:after
 			margin-left: size(5)
 			content: url('../assets/arrow-link.svg')
@@ -129,5 +170,6 @@ p
 			transition: transform .3s ease-in-out
 
 		&:hover
+			color: var(--text-color-dark-hover)
 			&:after
 				transform: translateX(size(10))
