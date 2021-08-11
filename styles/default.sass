@@ -17,6 +17,7 @@ $small-font-size: size(12)
 	--text-color-dark: #28306D
 	--text-color-dark-hover: #3D4FC3
 	--text-color-dark-active: #28306D
+	--text-color-dark-disabled: #C42126
 	--text-black: #000000
 	--button-color: #3D4FC3
 	--button-color-hover: #28306D
@@ -99,6 +100,10 @@ input
 	&:focus
 		border-color: var(--button-color)
 button[type="submit"]
+	display: flex
+	align-items: center
+	align-content: center
+	justify-content: center
 	appearance: none
 	background-color: var(--button-color)
 	height: size(50)
@@ -173,3 +178,17 @@ p
 			color: var(--text-color-dark-hover)
 			&:after
 				transform: translateX(size(10))
+.bordered__link
+	display: inline-flex
+	align-items: center
+	align-content: center
+	justify-content: center
+	font-size: size(12)
+	color: var(--text-color-dark)
+	border-bottom: size(1) solid currentColor
+	transition: all .3s ease-in-out
+	text-decoration: none
+	&:hover
+		color: var(--text-color-dark-hover)
+	&:active
+		color: var(--text-color-dark-active)

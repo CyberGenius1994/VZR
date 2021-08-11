@@ -1,8 +1,3 @@
-window.addEventListener("load", function() {
-
-  swiper.init()
-});
-
 const swiper = new Swiper('.polices__items', {
   slidesPerView: 4,
   spaceBetween: 22,
@@ -10,19 +5,27 @@ const swiper = new Swiper('.polices__items', {
   loop: true,
   navigation: {
     nextEl: '.polices__button-next',
-    prevEl: '.police__button-prev',
+    prevEl: '.polices__button-prev',
   },
 });
 
-const swiper2 = new Swiper('.polices__items', {
-  slidesPerView: 4,
+const swiper2 = new Swiper('.news-slider', {
+  slidesPerView: 'auto',
   spaceBetween: 22,
   direction: 'horizontal',
   loop: true,
+  autoHeight: false,
   navigation: {
-    nextEl: '.polices__button-next',
-    prevEl: '.police__button-prev',
+    nextEl: '.abroad__button-next',
+    prevEl: '.abroad__button-prev',
   },
 });
+
+window.addEventListener("load", function() {
+  swiper.init();
+  swiper2.init();
+});
+
+
 
 
