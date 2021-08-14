@@ -21,9 +21,32 @@ const swiper2 = new Swiper('.news-slider', {
   },
 });
 
+let slides = [
+  'Топовый ассистанс',
+  'Моментальное согласование',
+  'Неограниченные консультации',
+  'Все полисы с COVID – 19'
+];
+const swiper3 = new Swiper('.swiper-container', {
+  slidesPerView: 1,
+  effect: 'fade',
+  speed: 500,
+  loop: true,
+  autoHeight: false,
+  pagination: {
+    el: '.slider__pagination',
+    type: 'bullets',
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (slides[index]) + '</span>';
+    },
+  },
+});
+
 window.addEventListener("load", function() {
   swiper.init();
   swiper2.init();
+  swiper3.init();
 });
 
 

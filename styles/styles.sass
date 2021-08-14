@@ -442,8 +442,7 @@
 			padding-left: size(30)
 .footer
 	background-color: var(--text-color-dark)
-	padding-top: size(80)
-	&__outer
+	padding: size(80) 0 size(57)
 	&__menu
 		&-title
 			font-weight: 600
@@ -460,6 +459,9 @@
 					font-size: var(--p-font-size)
 					line-height: 1.7
 					font-weight:  400
+					transition: all .3s ease-in-out
+					&:hover
+						color: #ffffff
 		&-social
 			display: flex
 			justify-content: flex-end
@@ -478,12 +480,28 @@
 						display: block
 						width: size(20)
 						height: size(20)
+						transition: all .3s ease-in-out
+						&:hover
+							opacity: .7
 						img
 							width: 100%
 							height: 100%
 							object-fit: contain
 	&__info
+		&-contacts
+			margin-top: size(13)
+			a
+				text-decoration: none
+				display: inline-block
+				margin-top: size(23)
+				line-height: 1.5
+				font-size: var(--h6-font-size)
+				color: #ffffff
+				transition: all .3s ease-in-out
+				&:hover
+					opacity: .7
 		&-payments
+			margin-top: size(113)
 			max-width: size(200)
 			&-list
 				display: flex
@@ -499,3 +517,9 @@
 						width: 100%
 						height: 100%
 						object-fit: contain
+	&__copyright
+		margin-top: size(61)
+		&-text
+			color: #ffffff
+			font-size: var(--small-font-size)
+			text-align: center

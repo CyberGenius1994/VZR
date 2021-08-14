@@ -1,2 +1,155 @@
-.covid
-	display: flex
+@import 'mixins'
+
+.header
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 99
+	width: 100%
+	padding: size(25) 0
+	&__outer
+		align-items: center
+		align-content: center
+
+	&__social
+		&-icons
+			display: flex
+			list-style-type: none
+			align-content: center
+			align-items: center
+			justify-content: space-between
+			li
+				a
+					img
+						width: size(30)
+						height: size(30)
+.hero
+	position: relative
+	&__block
+		background: linear-gradient(255.89deg, rgba(47, 203, 214, 0.6) 0%, rgba(61, 79, 195, 0.6) 100%)
+		backdrop-filter: blur(10px)
+		height: 75vh
+		min-height: size(600)
+	&__video
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		width: 100%
+		height: 100%
+		z-index: -1
+		video
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__slider
+		&.swiper-container
+			margin: 0
+.slider
+	&__navigation
+		padding: size(135) 0 0 0
+		&-title
+			font-family: var(--text-font)
+			line-height: 1.5
+			color: #ffffff
+			font-weight: 300
+		&-description
+			max-width: size(340)
+			color: rgba(255, 255, 255, 0.7)
+	&__pagination
+		display: inline-flex
+		flex-direction: column
+		align-items: flex-end
+		width: 75%
+		max-width: 100%
+		margin-top: size(79)
+		&.swiper-pagination-bullets
+			width: auto !important
+		.swiper-pagination-bullet
+			display: inline-flex
+			align-items: center
+			align-content: center
+			justify-content: flex-end
+			width: auto
+			height: auto
+			background: transparent
+			color: #ffffff
+			opacity: .7
+			margin-top: size(13) !important
+			&:after
+				content: ''
+				width: size(10)
+				height: size(10)
+				display: block
+				margin-left: size(23)
+				border: size(1) solid #ffffff
+				background: transparent
+				border-radius: 100%
+			&.swiper-pagination-bullet-active
+				opacity: 1
+				&:after
+					background: #ffffff
+.slide
+	height: 75vh
+	min-height: size(600)
+	opacity: 0 !important
+	padding-top: size(200)
+	&__number
+		font-size: size(700)
+		line-height: 0.72
+		color: rgba(255, 255, 255, .2)
+		opacity: 0
+		font-family: var(--text-font)
+		font-weight: 700
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		right: 0
+	&__info
+		padding-top: size(250)
+		&-first
+			padding-bottom: size(180)
+		&-big
+			&-title
+				display: inline-flex
+				align-content: center
+				align-items: center
+				justify-content: flex-start
+				font-weight: 500
+				line-height: 1.25
+				color: #ffffff
+				transform: translateY(size(25))
+				transition: all .4s .3s
+				opacity: 0
+				&:before
+					content: ''
+					display: block
+					flex-grow: 0
+					flex-shrink: 0
+					width: size(30)
+					height: size(4)
+					background-color: currentColor
+					margin: 0 size(30) 0 size(30)
+			&-subtitle
+				margin-top: size(50)
+				color: #ffffff
+				transform: translateY(size(25))
+				transition: all .4s .4s
+				opacity: 0
+			&-description
+				margin-top: size(21)
+				color: #ffffff
+				transform: translateY(size(25))
+				transition: all .4s .5s
+				opacity: 0
+	&.swiper-slide-active
+		opacity: 1 !important
+		.slide__info
+			&-big
+				&-title,
+				&-subtitle,
+				&-description
+					transform: translateY(0)
+					opacity: 1
+		.slide__number
+			opacity: 1
