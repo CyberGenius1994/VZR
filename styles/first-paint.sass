@@ -7,10 +7,24 @@
 	z-index: 99
 	width: 100%
 	padding: size(25) 0
+	&__link
+		display: inline-block
+		font-size: var(--h6-font-size)
+		text-decoration: none
+		color: #ffffff
+		transition: all .3s ease-in-out
+		&:hover
+			opacity: .7
+	&__logo
+		a
+			display: flex
+			width: 100%
+			img
+				width: 100%
+				height: auto
 	&__outer
 		align-items: center
 		align-content: center
-
 	&__social
 		&-icons
 			display: flex
@@ -20,6 +34,9 @@
 			justify-content: space-between
 			li
 				a
+					transition: all .3s ease-in-out
+					&:hover
+						opacity: .7
 					img
 						width: size(30)
 						height: size(30)
@@ -45,9 +62,23 @@
 	&__slider
 		&.swiper-container
 			margin: 0
+	&__form
+		width: 100%
+		max-width: size(952)
+		padding-top: size(100)
+		margin: 0 auto
+		&-outer
+			display: flex
+			fieldset
+				border: none
+				padding: 0
+				input
+					border-radius: 0
+					outline: none
+					border: none
 .slider
 	&__navigation
-		padding: size(135) 0 0 0
+		padding: size(50) 0 0 0
 		&-title
 			font-family: var(--text-font)
 			line-height: 1.5
@@ -93,17 +124,16 @@
 	height: 75vh
 	min-height: size(600)
 	opacity: 0 !important
-	padding-top: size(200)
+	padding-top: size(50)
 	&__number
-		font-size: size(700)
+		font-size: size(500)
 		line-height: 0.72
 		color: rgba(255, 255, 255, .2)
 		opacity: 0
 		font-family: var(--text-font)
 		font-weight: 700
 		position: absolute
-		top: 50%
-		transform: translateY(-50%)
+		top: 0
 		right: 0
 	&__info
 		padding-top: size(250)
@@ -131,13 +161,13 @@
 					background-color: currentColor
 					margin: 0 size(30) 0 size(30)
 			&-subtitle
-				margin-top: size(50)
+				margin-top: size(30)
 				color: #ffffff
 				transform: translateY(size(25))
 				transition: all .4s .4s
 				opacity: 0
 			&-description
-				margin-top: size(21)
+				margin-top: size(10)
 				color: #ffffff
 				transform: translateY(size(25))
 				transition: all .4s .5s

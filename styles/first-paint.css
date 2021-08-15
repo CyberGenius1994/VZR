@@ -6,6 +6,24 @@
   width: 100%;
   padding: 1.735vw 0;
 }
+.header__link {
+  display: inline-block;
+  font-size: var(--h6-font-size);
+  text-decoration: none;
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+.header__link:hover {
+  opacity: 0.7;
+}
+.header__logo a {
+  display: flex;
+  width: 100%;
+}
+.header__logo a img {
+  width: 100%;
+  height: auto;
+}
 .header__outer {
   align-items: center;
   align-content: center;
@@ -16,6 +34,12 @@
   align-content: center;
   align-items: center;
   justify-content: space-between;
+}
+.header__social-icons li a {
+  transition: all 0.3s ease-in-out;
+}
+.header__social-icons li a:hover {
+  opacity: 0.7;
 }
 .header__social-icons li a img {
   width: 2.082vw;
@@ -48,9 +72,27 @@
 .hero__slider.swiper-container {
   margin: 0;
 }
+.hero__form {
+  width: 100%;
+  max-width: 66.0688vw;
+  padding-top: 6.94vw;
+  margin: 0 auto;
+}
+.hero__form-outer {
+  display: flex;
+}
+.hero__form-outer fieldset {
+  border: none;
+  padding: 0;
+}
+.hero__form-outer fieldset input {
+  border-radius: 0;
+  outline: none;
+  border: none;
+}
 
 .slider__navigation {
-  padding: 9.369vw 0 0 0;
+  padding: 3.47vw 0 0 0;
 }
 .slider__navigation-title {
   font-family: var(--text-font);
@@ -106,18 +148,17 @@
   height: 75vh;
   min-height: 41.64vw;
   opacity: 0 !important;
-  padding-top: 13.88vw;
+  padding-top: 3.47vw;
 }
 .slide__number {
-  font-size: 48.58vw;
+  font-size: 34.7vw;
   line-height: 0.72;
   color: rgba(255, 255, 255, 0.2);
   opacity: 0;
   font-family: var(--text-font);
   font-weight: 700;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
   right: 0;
 }
 .slide__info {
@@ -149,14 +190,14 @@
   margin: 0 2.082vw 0 2.082vw;
 }
 .slide__info-big-subtitle {
-  margin-top: 3.47vw;
+  margin-top: 2.082vw;
   color: #ffffff;
   transform: translateY(1.735vw);
   transition: all 0.4s 0.4s;
   opacity: 0;
 }
 .slide__info-big-description {
-  margin-top: 1.4574vw;
+  margin-top: 0.694vw;
   color: #ffffff;
   transform: translateY(1.735vw);
   transition: all 0.4s 0.5s;
