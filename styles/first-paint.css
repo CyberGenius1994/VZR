@@ -80,15 +80,55 @@
 }
 .hero__form-outer {
   display: flex;
+  align-items: center;
+  align-content: center;
+  background-color: var(--bg-color);
+  padding: 0.694vw;
+  border-radius: 6.94vw;
 }
 .hero__form-outer fieldset {
   border: none;
+  padding: 0 2.429vw;
+  border-right: 0.0694vw solid #dddddd;
+  align-self: center;
+}
+.hero__form-outer fieldset:nth-last-child(2) {
+  border: none;
+}
+.hero__form-outer fieldset:last-child {
   padding: 0;
+  border: none;
+}
+.hero__form-outer fieldset label {
+  font-weight: bold;
+  color: #1B2119;
+  opacity: 0.95;
+  font-family: var(--text-font);
+  font-size: var(--p-font-size);
+  line-height: 1.37;
 }
 .hero__form-outer fieldset input {
   border-radius: 0;
   outline: none;
   border: none;
+  height: 1.2492vw;
+  padding: 0;
+  color: #717171;
+  font-family: var(--text-font);
+  font-size: var(--p-font-size);
+}
+.hero__form-outer fieldset input::placeholder {
+  color: #717171;
+}
+.hero__form-outer fieldset button {
+  width: 4.511vw;
+  height: 4.511vw;
+  padding: 0;
+  border-radius: 100%;
+}
+.hero__form-outer fieldset button svg {
+  width: 2.776vw;
+  height: 2.776vw;
 }
 
 .slider__navigation {

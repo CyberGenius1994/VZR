@@ -1,5 +1,5 @@
 const swiper = new Swiper('.polices__items', {
-  slidesPerView: 4,
+  slidesPerView: 'auto',
   spaceBetween: 22,
   direction: 'horizontal',
   loop: true,
@@ -7,6 +7,17 @@ const swiper = new Swiper('.polices__items', {
     nextEl: '.polices__button-next',
     prevEl: '.polices__button-prev',
   },
+  breakpoints: {
+    320: {
+      slidesPerView: 'auto',
+    },
+    480: {
+      slidesPerView: '3',
+    },
+    1023: {
+      slidesPerView: 4,
+    }
+  }
 });
 
 const swiper2 = new Swiper('.news-slider', {

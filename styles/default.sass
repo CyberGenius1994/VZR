@@ -42,10 +42,16 @@ $small-font-size: size(12)
 
 @include lg
 	@include columns(lg)
+	.hidden-lg
+		display: none
 @include md
 	@include columns(md)
+	.hidden-md
+		display: none
 @include xs
 	@include columns(xs)
+	.hidden-xs
+		display: none
 
 *
 	box-sizing: border-box

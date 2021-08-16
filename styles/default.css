@@ -125,6 +125,10 @@
   .offset-lg-12 {
     margin-left: 100%;
   }
+
+  .hidden-lg {
+    display: none;
+  }
 }
 @media screen and (max-width: 1023px) {
   .column-md-1 {
@@ -222,6 +226,10 @@
   .offset-md-12 {
     margin-left: 100%;
   }
+
+  .hidden-md {
+    display: none;
+  }
 }
 @media screen and (max-width: 767px) {
   .column-xs-1 {
@@ -318,6 +326,10 @@
 
   .offset-xs-12 {
     margin-left: 100%;
+  }
+
+  .hidden-xs {
+    display: none;
   }
 }
 * {
