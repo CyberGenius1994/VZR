@@ -1,12 +1,14 @@
 @import 'mixins'
 
 .header
-	position: absolute
+	position: fixed
 	top: 0
 	left: 0
 	z-index: 99
 	width: 100%
 	padding: size(25) 0
+	&.white
+		background-color: #ffffff
 	&__link
 		display: inline-block
 		font-size: var(--h6-font-size)
@@ -43,10 +45,11 @@
 .hero
 	position: relative
 	&__block
-		background: linear-gradient(255.89deg, rgba(47, 203, 214, 0.6) 0%, rgba(61, 79, 195, 0.6) 100%)
-		backdrop-filter: blur(10px)
-		height: 75vh
-		min-height: size(600)
+		background: linear-gradient(270deg, rgba(0, 8, 16, 0) 0%, rgba(2, 12, 32, .75) 75%)
+		backdrop-filter: blur(2px)
+		min-height: 78vh
+		height: min-content
+		padding-top: size(175)
 	&__video
 		position: absolute
 		top: 50%
@@ -65,7 +68,6 @@
 	&__form
 		width: 100%
 		max-width: size(952)
-		padding-top: size(100)
 		margin: 0 auto
 		&-outer
 			display: flex
@@ -112,22 +114,24 @@
 						height: size(40)
 .slider
 	&__navigation
-		padding: size(50) 0 0 0
+		display: flex
+		justify-content: flex-end
+		padding-top: size(50)
 		&-title
 			font-family: var(--text-font)
 			line-height: 1.5
+			font-size: size(28)
 			color: #ffffff
 			font-weight: 300
+			margin-top: size(10)
 		&-description
-			max-width: size(340)
 			color: rgba(255, 255, 255, 0.7)
 	&__pagination
 		display: inline-flex
 		flex-direction: column
 		align-items: flex-end
-		width: 75%
 		max-width: 100%
-		margin-top: size(79)
+		padding-right: size(80)
 		&.swiper-pagination-bullets
 			width: auto !important
 		.swiper-pagination-bullet
@@ -139,36 +143,35 @@
 			height: auto
 			background: transparent
 			color: #ffffff
-			opacity: .7
-			margin-top: size(13) !important
+			opacity: .75
+			margin: 2vh 0 !important
 			&:after
 				content: ''
-				width: size(10)
-				height: size(10)
+				width: size(5)
+				height: size(5)
 				display: block
 				margin-left: size(23)
-				border: size(1) solid #ffffff
-				background: transparent
+				background: #ffffff
 				border-radius: 100%
+				box-sizing: border-box
 			&.swiper-pagination-bullet-active
 				opacity: 1
 				&:after
-					background: #ffffff
+					background: #FF6347
 .slide
-	height: 75vh
-	min-height: size(600)
 	opacity: 0 !important
 	padding-top: size(50)
+	padding-bottom: size(20)
 	&__number
-		font-size: size(500)
-		line-height: 0.72
-		color: rgba(255, 255, 255, .2)
-		opacity: 0
-		font-family: var(--text-font)
-		font-weight: 700
+		font-size: size(550)
+		line-height: 0.45
+		color: rgba(0, 0, 255, .75)
+		font-family: var(--other-font)
+		font-weight: 400
 		position: absolute
-		top: 0
-		right: 0
+		top: size(-30)
+		right: size(-145)
+		opacity: 0
 	&__info
 		padding-top: size(250)
 		&-first
@@ -179,35 +182,55 @@
 				align-content: center
 				align-items: center
 				justify-content: flex-start
-				font-weight: 500
-				line-height: 1.25
-				color: #ffffff
+				font-size: size(40)
+				font-weight: 800
+				text-transform: uppercase
+				line-height: 1
+				color: #FF6347
 				transform: translateY(size(25))
 				transition: all .4s .3s
 				opacity: 0
-				&:before
-					content: ''
-					display: block
-					flex-grow: 0
-					flex-shrink: 0
-					width: size(30)
-					height: size(4)
-					background-color: currentColor
-					margin: 0 size(30) 0 size(30)
+				letter-spacing: -1px
+				max-width: size(650)
 			&-subtitle
+				max-width: size(650)
 				margin-top: size(30)
 				color: #ffffff
 				transform: translateY(size(25))
 				transition: all .4s .4s
 				opacity: 0
+				font-family: var(--title-font)
+				font-size: size(24)
+				letter-spacing: -.5px
+				padding: 0
+				font-weight: 400
+				line-height: 1.25
+				span
+					margin-left: size(16)
 			&-description
 				margin-top: size(10)
 				color: #ffffff
 				transform: translateY(size(25))
 				transition: all .4s .5s
 				opacity: 0
+				max-width: size(650)
+				font-family: var(--title-font)
+				font-weight: 300
+				font-size: var(--small-font-size)
+				line-height: 1.5
+				padding: 0 0 1.75rem
+	&__link
+		font-family: var(--title-font)
+		font-weight: 300
+		margin-top: size(13)
+		transform: translateY(size(25))
+		transition: all .4s .6s
+		opacity: 0
 	&.swiper-slide-active
 		opacity: 1 !important
+		.slide__link
+			transform: translateY(0)
+			opacity: 1
 		.slide__info
 			&-big
 				&-title,

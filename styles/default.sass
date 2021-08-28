@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&family=Montserrat:wght@400;600;700;800&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Rammetto+One&family=Ubuntu:wght@300;400;500&display=swap')
 @import 'mixins'
 
 $h1-font-size: size(40)
@@ -9,6 +9,16 @@ $h5-font-size: size(20)
 $h6-font-size: size(16)
 $p-font-size: size(14)
 $small-font-size: size(12)
+
+@include md
+	$h1-font-size: size-md(40)
+	$h2-font-size: size-md(35)
+	$h3-font-size: size-md(35)
+	$h4-font-size: size-md(30)
+	$h5-font-size: size-md(20)
+	$h6-font-size: size-md(16)
+	$p-font-size: size-md(14)
+	$small-font-size: size-md(12)
 
 \:root
 	--bg-color: #FFFFFF
@@ -25,6 +35,7 @@ $small-font-size: size(12)
 	--text-color-green: rgba(68, 115, 118, 0.7)
 	--title-font: 'Ubuntu', sans-serif
 	--text-font: 'Montserrat', sans-serif
+	--other-font: 'Rammetto One', cursive
 	--block-shadow: 0px #{size(5)} #{size(20)} rgba(40, 48, 109, 0.2)
 	--dropdown-shadow: 0px #{size(5)} #{size(20)} rgba(179, 119, 255, 0.15)
 	--block-radius: #{size(10)}
@@ -45,9 +56,34 @@ $small-font-size: size(12)
 	.hidden-lg
 		display: none
 @include md
+	@include md
+	$h1-font-size: size-md(40)
+	$h2-font-size: size-md(35)
+	$h3-font-size: size-md(35)
+	$h4-font-size: size-md(30)
+	$h5-font-size: size-md(20)
+	$h6-font-size: size-md(16)
+	$p-font-size: size-md(14)
+	$small-font-size: size-md(12)
+	\:root
+		--block-shadow: 0px #{size-md(5)} #{size-md(20)} rgba(40, 48, 109, 0.2)
+		--dropdown-shadow: 0px #{size-md(5)} #{size-md(20)} rgba(179, 119, 255, 0.15)
+		--block-radius: #{size-md(10)}
+		--block-radius-big: #{size-md(25)}
+		--block-radius-bigest: #{size-md(30)}
+		--h1-font-size: #{$h1-font-size}
+		--h2-font-size: #{$h2-font-size}
+		--h3-font-size: #{$h3-font-size}
+		--h4-font-size: #{$h4-font-size}
+		--h5-font-size: #{$h5-font-size}
+		--h6-font-size: #{$h6-font-size}
+		--p-font-size: #{$p-font-size}
+		--small-font-size: #{$small-font-size}
+
 	@include columns(md)
 	.hidden-md
 		display: none
+
 @include xs
 	@include columns(xs)
 	.hidden-xs
@@ -184,6 +220,13 @@ p
 			color: var(--text-color-dark-hover)
 			&:after
 				transform: translateX(size(10))
+		&-white
+			color: #ffffff
+			&:after
+				content: url('../assets/arrow-link-white.svg')
+			&:hover
+				color: #ffffff
+				opacity: .7
 .bordered__link
 	display: inline-flex
 	align-items: center
@@ -198,3 +241,86 @@ p
 		color: var(--text-color-dark-hover)
 	&:active
 		color: var(--text-color-dark-active)
+
+.modal
+	position: fixed
+	top: 0
+	left: 0
+	opacity: 0
+	visibility: hidden
+	width: 100%
+	height: 100%
+	pointer-events: none
+	z-index: 999
+	display: flex
+	align-items: center
+	align-content: center
+	justify-content: center
+	&__bg
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: rgba(231, 233, 237, 0.4)
+
+	&__container
+		width: 100%
+		max-width: 50%
+		margin: auto
+		border-radius: var(--block-radius-big)
+		background: #fff
+		position: relative
+		padding: size(50)
+		overflow-y: auto
+		max-height: 100%
+
+	&__close
+		position: absolute
+		right: size(20)
+		top: size(20)
+		width: size(28)
+		height: size(28)
+		outline: none
+		appearance: none
+		color: var(--text-color)
+		background: none
+		border: 0
+		font-weight: bold
+		cursor: pointer
+		&:before
+			content: ''
+			position: absolute
+			width: size(34)
+			height: size(6)
+			top: size(10)
+			left: size(-3)
+			background-color: currentColor
+			-webkit-transform: rotate(45deg)
+			transform: rotate(45deg)
+			border-radius: size(10)
+			transition: opacity .3s ease-in-out
+		&:after
+			content: ''
+			position: absolute
+			width: size(34)
+			height: size(6)
+			top: size(10)
+			left: size(-2)
+			background-color: currentColor
+			-webkit-transform: rotate(135deg)
+			transform: rotate(135deg)
+			border-radius: size(10)
+			transition: opacity .3s ease-in-out
+	&:hover:before,
+	&:hover:after
+		opacity: .6
+	&__content
+		margin: 0 auto
+		max-width: 90%
+	&.open
+		opacity: 1
+		visibility: visible
+		pointer-events: auto

@@ -2,15 +2,22 @@
 
 .polices
 	padding: size(60) 0 size(80)
-	background-color: var(--bg-color-dark)
 	&__outer
 		&-title
 			text-align: center
 	&__items
-		overflow: hidden
+		padding-top: size(60)
+		overflow: visible
 	&__item
 		min-height: 100%
 		height: auto
+		box-shadow: var(--block-shadow)
+		transition: all .3s ease-in-out
+		&:hover
+			cursor: pointer
+			margin-top: size(5)
+			margin-bottom: size(-5)
+			box-shadow: 0 10px 100px 0 rgb(0 92 184 / 5%), 0 10px 15px -5px rgb(0 0 0 / 60%)
 	&__buttons
 		display: flex
 		align-items: center
@@ -55,13 +62,22 @@
 			-webkit-box-orient: vertical
 			overflow: hidden
 			margin-bottom: auto
-			line-height: 1.62
+			font-family: var(--title-font)
+			letter-spacing: -1px
+			font-weight: 400
+			font-size: size(18)
+			line-height: 1.25
+			color: #092148
 		p
 			color: var(--text-color-green)
 		&-date,
 		&-time
 			width: 100%
 			margin-bottom: size(2)
+			font-weight: 300
+			font-family: var(--title-font)
+			font-size: size(16)
+
 		&-date
 			margin-top: size(12)
 		&-insurance
@@ -92,7 +108,9 @@
 			padding-top: size(6)
 
 .covid
-	@include block-padding
+	padding-bottom: size(80)
+	margin-left: 15vw
+	margin-right: 15vw
 	&__item
 		&-outer
 			display: flex
@@ -102,6 +120,7 @@
 			box-shadow: var(--block-shadow)
 			border-radius: var(--block-radius-bigest)
 			padding: size(51) size(34) size(48)
+			background-color: rgba(255, 255, 255, .5)
 		&-picture
 			width: size(200)
 			height: size(200)
@@ -113,11 +132,23 @@
 		&-description
 			text-align: center
 			font-weight: 400
-			line-height: 1.5
+			line-height: 1.25
+			font-family: var(--title-font)
+			letter-spacing: -1pх
+			font-size: size(18)
+			color: #092148
 	&__outer
+		background-color: rgba(2, 12, 32, .25)
+		padding: size(80) 3vw
 		&-title
 			text-align: center
 			margin-bottom: size(85)
+			text-transform: uppercase
+			letter-spacing: 1.5px
+			font-weight: 800
+			font-size: size(32)
+			line-height: 1.25
+			color: #092148
 
 .abroad
 	@include block-padding
@@ -253,9 +284,10 @@
 
 .assistance
 	padding: size(36) 0
-	background: url('../assets/assistance_bg.png'), var(--bg-color-dark)
-	background-position: top center
+	background: url('../assets/map.jpg'), linear-gradient(270deg, rgba(2, 12, 32, .5) 10%, rgba(2, 12, 32, .75) 100%) top center
+	background-blend-mode: multiply
 	background-size: contain
+	backdrop-filter: blur(.5px)
 	&__outer
 		display: flex
 		flex-wrap: wrap
@@ -264,12 +296,15 @@
 			max-width: size(800)
 			text-align: center
 			margin-bottom: size(60)
+			color: #ffffff
 	&__info
 		padding: 0 size(15) 0 size(55)
 		&-title
 			font-family: var(--title-font)
 			font-weight: 600
+			color: #ffffff
 		&-description
+			color: #ffffff
 			margin-top: size(25)
 			span
 				display: inline-block
@@ -315,7 +350,7 @@
 	&__outer
 		&-title
 			text-align: center
-			margin-bottom: size(86)
+			margin-bottom: size(80)
 
 .review
 	margin-bottom: size(40)
@@ -443,6 +478,8 @@
 .footer
 	background-color: var(--text-color-dark)
 	padding: size(80) 0 size(57)
+	@include md
+		padding-top: size-md(68)
 	&__menu
 		&-title
 			font-weight: 600
@@ -451,6 +488,8 @@
 		&-list
 			list-style-type: none
 			margin-top: size(3)
+			@include md
+				margin-top: size-md(3)
 			li
 				margin-top: size(15)
 				a
@@ -523,3 +562,10 @@
 			color: #ffffff
 			font-size: var(--small-font-size)
 			text-align: center
+
+.about
+	&__modal
+		&-description
+			span
+				display: block
+				margin-top: size(15)
