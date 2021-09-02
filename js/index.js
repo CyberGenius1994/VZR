@@ -20,6 +20,28 @@ const swiper = new Swiper('.polices__items', {
   }
 });
 
+const swiperNew = new Swiper('.reviews__items', {
+  slidesPerView: 'auto',
+  spaceBetween: 22,
+  direction: 'horizontal',
+  loop: true,
+  navigation: {
+    nextEl: '.reviews__button-next',
+    prevEl: '.reviews__button-prev',
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 'auto',
+    },
+    480: {
+      slidesPerView: '3',
+    },
+    1023: {
+      slidesPerView: 4,
+    }
+  }
+});
+
 const swiper2 = new Swiper('.news-slider', {
   slidesPerView: 'auto',
   spaceBetween: 22,
@@ -61,12 +83,15 @@ const modalsBlock = function () {
     trigger.addEventListener('click', function(event) {
       event.preventDefault();
       const modal = document.getElementById(trigger.dataset.modal);
+      const body = document.body;
       modal.classList.add('open');
+      body.classList.add('no-scroll');
       const exits = modal.querySelectorAll('.modal-exit');
       exits.forEach(function(exit) {
         exit.addEventListener('click', function(event) {
           event.preventDefault();
           modal.classList.remove('open');
+          body.classList.remove('no-scroll');
         });
         document.onkeydown = function(e) {
           if (e.key === 'Escape') {
@@ -80,6 +105,20 @@ const modalsBlock = function () {
 
 window.addEventListener("load", function() {
   modalsBlock();
+  const nav = document.querySelector('.header');
+  const navTop = nav.offsetTop;
+
+  function stickyNavigation() {
+    console.log('scrollY = ' + window.scrollY);
+
+    if (window.scrollY >= 500) {
+      nav.classList.add('sticky');
+    } else {
+      nav.classList.remove('sticky');
+    }
+  }
+
+  window.addEventListener('scroll', stickyNavigation);
 });
 
 

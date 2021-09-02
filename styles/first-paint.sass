@@ -1,14 +1,24 @@
 @import 'mixins'
 
 .header
-	position: fixed
+	position: absolute
 	top: 0
 	left: 0
 	z-index: 99
 	width: 100%
 	padding: size(25) 0
-	&.white
+	&.sticky
+		position: fixed
 		background-color: #ffffff
+		transition: transform .3s ease-in-out
+		svg
+			.earth,
+			.text
+				fill: rgb(72, 76, 100)
+		.header__link,
+		.header__social-icons li a
+			color: rgb(72, 76, 100)
+
 	&__link
 		display: inline-block
 		font-size: var(--h6-font-size)
@@ -37,11 +47,12 @@
 			li
 				a
 					transition: all .3s ease-in-out
+					color: #fff
 					&:hover
 						opacity: .7
-					img
-						width: size(30)
-						height: size(30)
+					svg
+						width: size(20)
+						height: size(20)
 .hero
 	position: relative
 	&__block
@@ -120,12 +131,17 @@
 		&-title
 			font-family: var(--text-font)
 			line-height: 1.5
-			font-size: size(28)
+			font-size: 1.75rem
 			color: #ffffff
 			font-weight: 300
-			margin-top: size(10)
 		&-description
-			color: rgba(255, 255, 255, 0.7)
+			max-width: 30vw
+			font-family: var(--title-font)
+			font-weight: 300
+			color: #ffffff
+			font-size: 1rem
+			line-height: 1.5
+			padding: 0.5rem 0 1.75rem
 	&__pagination
 		display: inline-flex
 		flex-direction: column
@@ -144,7 +160,7 @@
 			background: transparent
 			color: #ffffff
 			opacity: .75
-			margin: 2vh 0 !important
+			margin: .75rem 0 2.2vh !important
 			&:after
 				content: ''
 				width: size(5)
@@ -160,8 +176,8 @@
 					background: #FF6347
 .slide
 	opacity: 0 !important
-	padding-top: size(50)
-	padding-bottom: size(20)
+	padding-top: 3.47vw
+	padding-bottom: 3.47vw
 	&__number
 		font-size: size(550)
 		line-height: 0.45
@@ -182,7 +198,7 @@
 				align-content: center
 				align-items: center
 				justify-content: flex-start
-				font-size: size(40)
+				font-size: 3rem
 				font-weight: 800
 				text-transform: uppercase
 				line-height: 1
@@ -193,20 +209,20 @@
 				letter-spacing: -1px
 				max-width: size(650)
 			&-subtitle
-				max-width: size(650)
+				max-width: 40vw
 				margin-top: size(30)
 				color: #ffffff
 				transform: translateY(size(25))
 				transition: all .4s .4s
 				opacity: 0
 				font-family: var(--title-font)
-				font-size: size(24)
+				font-size: 1.75rem
 				letter-spacing: -.5px
 				padding: 0
 				font-weight: 400
 				line-height: 1.25
 				span
-					margin-left: size(16)
+					margin-left: 1rem
 			&-description
 				margin-top: size(10)
 				color: #ffffff
