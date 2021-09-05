@@ -103,7 +103,8 @@ body, html
 	&.no-scroll
 		height: 100vh
 		overflow: hidden
-
+	@include md
+		font-size: 14px
 section
 	overflow: hidden
 ul, ol
@@ -113,10 +114,15 @@ ul, ol
 	width: 100%
 	max-width: size(1280)
 	margin: 0 auto
+	@include md
+		max-width: size-md(930)
+
 
 .col
 	flex: 0 0 auto
 	padding: 0 size(11)
+	@include md
+		padding: 0 size-md(11)
 
 
 .row

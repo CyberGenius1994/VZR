@@ -248,7 +248,7 @@
     display: none;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 480px) {
   .column-xs-1 {
     width: 8.3333333333%;
   }
@@ -366,6 +366,11 @@ body.no-scroll, html.no-scroll {
   height: 100vh;
   overflow: hidden;
 }
+@media screen and (max-width: 1023px) {
+  body, html {
+    font-size: 14px;
+  }
+}
 
 section {
   overflow: hidden;
@@ -380,10 +385,20 @@ ul, ol {
   max-width: 88.8888888889vw;
   margin: 0 auto;
 }
+@media screen and (max-width: 1023px) {
+  .container {
+    max-width: 90.8203125vw;
+  }
+}
 
 .col {
   flex: 0 0 auto;
   padding: 0 0.7638888889vw;
+}
+@media screen and (max-width: 1023px) {
+  .col {
+    padding: 0 1.07421875vw;
+  }
 }
 
 .row {

@@ -7,8 +7,12 @@
 		@content
 
 
-@mixin xs
+@mixin sm
 	@media screen and (max-width: 767px)
+		@content
+
+@mixin xs
+	@media screen and (max-width: 480px)
 		@content
 
 @mixin columns($size)
@@ -28,3 +32,5 @@
 
 @mixin block-padding
 	padding: size(80) 0
+	@include md
+		padding: size-md(56) 0

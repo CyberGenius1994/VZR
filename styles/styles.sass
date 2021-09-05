@@ -45,6 +45,9 @@
 		&-seller
 			width: size(40)
 			height: size(40)
+			@include md
+				width: size-md(40)
+				height: size-md(40)
 			img
 				width: 100%
 				height: 100%
@@ -117,6 +120,9 @@
 	padding-bottom: size(80)
 	margin-left: 15vw
 	margin-right: 15vw
+	@include md
+		margin-left: 0
+		margin-right: 0
 	&__item
 		&-outer
 			display: flex
@@ -154,7 +160,6 @@
 			font-weight: 800
 			line-height: 1.25
 			color: #092148
-			margin-top: calc(-2rem - 5vh)
 
 .abroad
 	@include block-padding
@@ -186,6 +191,8 @@
 			font-size: 1.5rem
 			line-height: 1.25
 			font-weight: 400
+			@include md
+				font-size: 1.2rem
 		&-description
 			display: -webkit-box
 			-webkit-line-clamp: 5
@@ -208,6 +215,9 @@
 			text-transform: uppercase
 			line-height: 1
 			color: #FF6347
+			@include md
+				font-size: 1.5rem
+				max-width: 100%
 		&-form
 			display: flex
 			margin-top: size(50)
@@ -227,6 +237,8 @@
 				li
 					display: inline-block
 					padding: 0 1rem 1.5rem 0
+					@include md
+						padding: 0 0 .5rem 0
 					a
 						color: var(--text-color)
 						text-decoration: none
@@ -259,6 +271,8 @@
 			text-decoration: none
 			line-height: 1.83
 			color: var(--text-color)
+			@include md
+
 
 	&__buttons
 		display: flex
@@ -310,10 +324,14 @@
 
 .assistance
 	padding: 5rem 0 size(36)
-	background: url('../assets/map.jpg'), linear-gradient(270deg, rgba(2, 12, 32, .5) 10%, rgba(2, 12, 32, .75) 100%) top center
+	background: url('../assets/map.jpg') no-repeat top center, linear-gradient(270deg, rgba(2, 12, 32, .5) 10%, rgba(2, 12, 32, .75) 100%)
 	background-blend-mode: multiply
 	background-size: contain
 	backdrop-filter: blur(.5px)
+	@include md
+		background-size: cover
+		background-position: center
+		@include block-padding
 	&__outer
 		display: flex
 		flex-wrap: wrap
@@ -323,8 +341,15 @@
 			text-align: center
 			margin-bottom: size(60)
 			color: #ffffff
+			@include md
+				max-width: 100%
+				br
+					display: none
 	&__info
 		padding: 0 size(15) 0 size(55)
+		@include md
+			order: 2
+			padding: 0 0 size-md(30) 0
 		&-title
 			font-family: var(--title-font)
 			max-width: 40vw
@@ -334,6 +359,8 @@
 			font-size: 1.5rem
 			line-height: 1.25
 			color: #ffffff
+			@include md
+				max-width: 100%
 		&-description
 			color: #ffffff
 			margin-top: size(25)
@@ -343,11 +370,18 @@
 			font-size: 1rem
 			line-height: 1.5
 			padding: 0 0 1.75rem
+			@include md
+				max-width: 100%
+				padding: 0
 			span
 				display: inline-block
 				margin-bottom: size(25)
 	&__numbers
 		padding-left: 10vw
+		@include md
+			order: 1
+			padding-left: 0
+			padding-bottom: size-md(30)
 		&-item
 			text-align: left
 			font-weight: 700
@@ -357,6 +391,8 @@
 			line-height: 1
 			color: #FF6347
 			max-width: 56%
+			@include md
+				max-width: 100%
 			span
 				font-family: var(--text-font)
 				padding-right: size(20)
@@ -367,8 +403,28 @@
 				text-transform: uppercase
 				line-height: 1
 				color: rgba(0, 0, 255, .95)
+	&__reviews
+		@include md
+			order: 3
 	&__review
 		padding-top: size(30)
+		&-picture
+			width: size-md(120)
+			height: size-md(120)
+			@include md
+				width: size-md(100)
+				height: size-md(100)
+			img
+				width: 100%
+				height: 100%
+				object-fit: cover
+				border-radius: 50%
+				@include md
+					width: 100%
+					height: 100%
+
+
+
 		&-outer
 			display: flex
 			flex-wrap: wrap
@@ -389,9 +445,7 @@
 			font-size: 1.5rem
 			line-height: 1.25
 			color: #092148
-		img
-			object-fit: cover
-			border-radius: 50%
+
 		&-link
 			margin-right: auto
 			margin-top: size(10)
@@ -405,6 +459,8 @@
 			font-size: 1rem
 			line-height: 1.5
 			margin-bottom: 2rem
+			@include md
+				margin-bottom: 1rem
 
 .reviews
 	@include block-padding
@@ -439,11 +495,17 @@
 		padding: size(34) size(40)
 		height: 100%
 		transition: all .3s ease-in-out
+		@include md
+			padding: size-md(34) size-md(30)
+			text-align: center
 		&:hover
 			cursor: pointer
 			margin-top: size(5)
 			margin-bottom: size(-5)
 			box-shadow: 0 10px 100px 0 rgba(0, 92, 184, .05), 0 10px 15px -5px rgba(0, 0, 0, .6)
+			@include md
+				margin-top: size-md(5)
+				margin-bottom: size-md(-5)
 		&-title
 			align-self: flex-start
 			font-family: var(--title-font)
@@ -453,6 +515,9 @@
 			line-height: 1.25
 			color: #092148
 			margin-top: size(14)
+			@include md
+				align-self: center
+				margin-top: size-md(14)
 		&-date,
 		&-site
 			width: 100%
@@ -462,14 +527,25 @@
 			font-size: 1rem
 			line-height: 1.25
 			margin-top: size(12)
+			@include md
+				align-self: center
+				text-align: center
+				margin-top: size-md(12)
 		&-link
 			margin-top: auto
 			margin-right: auto
+			@include md
+				margin-left: auto
+				margin-right: 0
 		&-info
 			display: inline-flex
 			flex-direction: column
 			align-items: flex-end
 			align-self: flex-start
+			@include md
+				align-self: center
+				text-align: center
+				align-items: center
 		&-description
 			display: -webkit-box
 			-webkit-line-clamp: 8
@@ -481,7 +557,10 @@
 			font-weight: 300
 			font-size: 1rem
 			line-height: 1.5
-			padding: 1rem 0
+			padding: 1rem 0 0
+			@include md
+				text-align: center
+				margin-bottom: size-md(35)
 	&__logos
 		display: flex
 		justify-content: center
@@ -490,6 +569,9 @@
 			margin: 0 auto
 			width: size(40)
 			height: size(40)
+			@include md
+				width: size-md(40)
+				height: size-md(40)
 			img
 				width: 100%
 				height: 100%
@@ -512,23 +594,30 @@
 		margin: size(15) 0 size(50)
 .question
 	margin-top: size(50)
+	@include md
+		margin-top: size-md(50)
 	details
 		-webkit-appearance: none
 		appearance: none
 		background: var(--bg-color)
 		box-shadow: var(--dropdown-shadow)
 		border-radius: size(25)
+		@include md
+			border-radius: size-md(25)
 		&>p
 			padding: 0 size(25) size(45) size(25)
 			user-select: none
 			color: var(--text-color-green)
-
+			@include md
+				padding: 0 size-md(25) size-md(45) size-md(25)
 		summary
 			display: flex
 			-webkit-appearance: none
 			appearance: none
 			padding: size(25) size(25) size(24)
 			cursor: pointer
+			@include md
+				padding: size-md(25) size-md(25) size-md(24)
 			h6
 				display: flex
 				align-items: center
@@ -547,6 +636,11 @@
 					border-bottom: size(1) solid var(--text-black)
 					transform: rotate(45deg)
 					transition: transform .3s ease-in-out
+					@include md
+						width: size-md(20)
+						height: size-md(20)
+						border-left: size-md(1) solid var(--text-black)
+						border-bottom: size-md(1) solid var(--text-black)
 			&::marker,
 			&::-webkit-details-marker
 				display: none !important
@@ -565,6 +659,8 @@
 
 .file
 	margin-bottom: size(25)
+	@include md
+		margin-bottom: size-md(25)
 	&__link
 		display: inline-flex
 		max-width: size(251)
@@ -578,19 +674,29 @@
 			color: var(--text-color-dark-active)
 		&:disabled
 			color: var(--text-color-dark-disabled)
+		@include md
+			max-width: size-md(205)
 		svg
 			flex: 0 0 size(20)
 			width: size(20)
 			height: size(20)
 			object-fit: contain
 			margin-top: size(5)
+			@include md
+				flex: 0 0 size-md(20)
+				width: size-md(20)
+				height: size-md(20)
+				object-fit: contain
+				margin-top: size-md(5)
 		&-text
 			padding-left: size(30)
+			@include md
+				padding-left: size-md(30)
 .footer
 	background-color: var(--text-color-dark)
 	padding: size(80) 0 size(57)
 	@include md
-		padding-top: size-md(68)
+		@include block-padding
 	&__menu
 		&-title
 			font-weight: 600
@@ -603,6 +709,8 @@
 				margin-top: size-md(3)
 			li
 				margin-top: size(15)
+				@include md
+					margin-top: size-md(15)
 				a
 					text-decoration: none
 					color: #BFCDD6
@@ -624,6 +732,8 @@
 				list-style-type: none
 				width: size(20)
 				height: 100%
+				@include md
+					width: size-md(20)
 				li
 					display: block
 					a
@@ -633,13 +743,21 @@
 						transition: all .3s ease-in-out
 						&:hover
 							opacity: .7
+						@include md
+							width: size-md(20)
+							height: size-md(20)
 						img
 							width: 100%
 							height: 100%
 							object-fit: contain
 	&__info
+		&-logo
+			@include md
+				max-width: 90%
 		&-contacts
 			margin-top: size(13)
+			@include md
+				margin-top: size-md(13)
 			a
 				text-decoration: none
 				display: inline-block
@@ -650,9 +768,13 @@
 				transition: all .3s ease-in-out
 				&:hover
 					opacity: .7
+					@include md
+						margin-top: size-md(23)
 		&-payments
 			margin-top: size(113)
 			max-width: size(200)
+			@include md
+				max-width: size-md(200)
 			&-list
 				display: flex
 				list-style-type: none
@@ -663,13 +785,20 @@
 					flex: 0 0 size(40)
 					width: size(40)
 					max-height: size(15)
+					@include md
+						flex: 0 0 size-md(40)
+						width: size-md(40)
+						max-height: size-md(15)
 					img
 						width: 100%
 						height: 100%
 						object-fit: contain
 	&__copyright
 		margin-top: size(61)
+		@include md
+			margin-top: size-md(80)
 		&-text
+			width: 100%
 			color: #ffffff
 			font-size: var(--small-font-size)
 			text-align: center
@@ -680,3 +809,5 @@
 			span
 				display: block
 				margin-top: size(15)
+				@include md
+					margin-top: size-md(15)

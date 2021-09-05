@@ -19,6 +19,9 @@
 .header.sticky .header__social-icons li a {
   color: #484c64;
 }
+.header.sticky .hero__form-outer {
+  box-shadow: var(--block-shadow);
+}
 .header__link {
   display: inline-block;
   font-size: var(--h6-font-size);

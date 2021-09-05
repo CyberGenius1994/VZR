@@ -14,8 +14,8 @@ const swiper = new Swiper('.polices__items', {
     480: {
       slidesPerView: '3',
     },
-    1023: {
-      slidesPerView: 4,
+    1280: {
+      slidesPerView: 3,
     }
   }
 });
@@ -36,8 +36,8 @@ const swiperNew = new Swiper('.reviews__items', {
     480: {
       slidesPerView: '3',
     },
-    1023: {
-      slidesPerView: 4,
+    1280: {
+      slidesPerView: 3,
     }
   }
 });
@@ -52,6 +52,17 @@ const swiper2 = new Swiper('.news-slider', {
     nextEl: '.abroad__button-next',
     prevEl: '.abroad__button-prev',
   },
+  breakpoints: {
+    320: {
+      slidesPerView: 'auto',
+    },
+    480: {
+      slidesPerView: '3',
+    },
+    1280: {
+      slidesPerView: 3,
+    }
+  }
 });
 
 let slides = [
@@ -60,6 +71,7 @@ let slides = [
   'Неограниченные консультации',
   'Все полисы с COVID – 19'
 ];
+
 const swiper3 = new Swiper('.swiper-container', {
   slidesPerView: 1,
   effect: 'fade',
