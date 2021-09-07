@@ -11,8 +11,8 @@ const swiper = new Swiper('.polices__items', {
     320: {
       slidesPerView: 'auto',
     },
-    480: {
-      slidesPerView: '3',
+    560: {
+      slidesPerView: 2,
     },
     1280: {
       slidesPerView: 3,
@@ -33,8 +33,8 @@ const swiperNew = new Swiper('.reviews__items', {
     320: {
       slidesPerView: 'auto',
     },
-    480: {
-      slidesPerView: '3',
+    560: {
+      slidesPerView: 2,
     },
     1280: {
       slidesPerView: 3,
@@ -56,8 +56,8 @@ const swiper2 = new Swiper('.news-slider', {
     320: {
       slidesPerView: 'auto',
     },
-    480: {
-      slidesPerView: '3',
+    560: {
+      slidesPerView: 2,
     },
     1280: {
       slidesPerView: 3,

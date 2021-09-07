@@ -11,8 +11,12 @@
 	@media screen and (max-width: 767px)
 		@content
 
+@mixin slide
+	@media screen and (max-width: 560px)
+		@content
+
 @mixin xs
-	@media screen and (max-width: 480px)
+	@media screen and (max-width: 479px)
 		@content
 
 @mixin columns($size)
@@ -34,3 +38,5 @@
 	padding: size(80) 0
 	@include md
 		padding: size-md(56) 0
+	@include md
+		padding: 56px 0

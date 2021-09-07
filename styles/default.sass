@@ -10,16 +10,6 @@ $h6-font-size: size(16)
 $p-font-size: size(14)
 $small-font-size: size(12)
 
-@include md
-	$h1-font-size: size-md(40)
-	$h2-font-size: size-md(35)
-	$h3-font-size: size-md(35)
-	$h4-font-size: size-md(30)
-	$h5-font-size: size-md(20)
-	$h6-font-size: size-md(16)
-	$p-font-size: size-md(14)
-	$small-font-size: size-md(12)
-
 \:root
 	--bg-color: #FFFFFF
 	--bg-color-dark: #CAE1E3
@@ -56,7 +46,6 @@ $small-font-size: size(12)
 	.hidden-lg
 		display: none
 @include md
-	@include md
 	$h1-font-size: size-md(40)
 	$h2-font-size: size-md(35)
 	$h3-font-size: size-md(35)
@@ -84,10 +73,18 @@ $small-font-size: size(12)
 	.hidden-md
 		display: none
 
+@include sm
+	@include columns(sm)
+	.hidden-sm
+		display: none
+
 @include xs
 	@include columns(xs)
 	.hidden-xs
 		display: none
+	.col
+		margin-left: 0 !important
+		margin-right: 0 !important
 
 *
 	box-sizing: border-box
@@ -139,6 +136,13 @@ ul, ol
 	line-height: 1.25
 	color: #092148
 	text-align: center
+	@include md
+		font-size: 1.5rem
+	@include sm
+		font-size: 20px
+		line-height: 1.5
+		font-weight: 400
+		text-transform: none
 input
 	width: 100%
 	font-size: var(--p-font-size)
@@ -209,8 +213,24 @@ p
 			transform: rotate(-45deg)
 			transition: transform .3s ease-in-out
 			margin-left: size(15)
+			@include md
+				width: size-md(10)
+				height: size-md(10)
+				border-left: size-md(1) solid var(--text-black)
+				border-bottom: size-md(1) solid var(--text-black)
+				margin-left: size-md(15)
+			@include sm
+				width: 10px
+				height: 10px
+				border-left: 1px solid var(--text-black)
+				border-bottom: 1px solid var(--text-black)
+				margin-left: 15px
+				margin-top: -3px
 		&:hover
 			color: var(--text-color-dark)
+		@include sm
+			font-size: 16px
+
 	&__link
 		display: inline-flex
 		align-items: center

@@ -164,11 +164,15 @@
 .abroad
 	@include block-padding
 	padding-top: 0
+	@include  md
+		padding-top: 0
 	&__outer
 		flex-direction: row-reverse
+
 	&__left
 		&-title
-			margin-bottom: 0
+			@include block-padding
+			padding-top: 0
 	&__news
 		display: flex
 		padding: size(30) size(34)
@@ -474,6 +478,8 @@
 		display: flex
 		align-items: center
 		justify-content: center
+		@include md
+			display: none
 	&__button
 		&-next,
 		&-prev
@@ -484,6 +490,10 @@
 				pointer-events: none
 
 .review
+	height: auto
+	@include slide
+		width: 75%
+		min-width: 270px
 	&__block
 		display: flex
 		flex-direction: column
@@ -498,6 +508,8 @@
 		@include md
 			padding: size-md(34) size-md(30)
 			text-align: center
+		@include sm
+			padding: 31px 10px
 		&:hover
 			cursor: pointer
 			margin-top: size(5)
@@ -506,6 +518,9 @@
 			@include md
 				margin-top: size-md(5)
 				margin-bottom: size-md(-5)
+			@include sm
+				margin-top: 5px
+				margin-bottom: -5px
 		&-title
 			align-self: flex-start
 			font-family: var(--title-font)
@@ -561,6 +576,9 @@
 			@include md
 				text-align: center
 				margin-bottom: size-md(35)
+			@include sm
+				-webkit-line-clamp: 6
+				margin-bottom: 20px
 	&__logos
 		display: flex
 		justify-content: center
@@ -572,6 +590,9 @@
 			@include md
 				width: size-md(40)
 				height: size-md(40)
+			@include sm
+				width: 40px
+				height: 40px
 			img
 				width: 100%
 				height: 100%
@@ -580,6 +601,8 @@
 .questions
 	@include block-padding
 	background-color: var(--bg-color-dark)
+	@include sm
+		padding-bottom: 30px
 	&__outer
 		display: flex
 		flex-direction: column
@@ -591,11 +614,23 @@
 	&__block
 		flex-direction: column
 		align-items: center
-		margin: size(15) 0 size(50)
+		margin: size(15) 0 size(30)
+		@include md
+			margin: size-md(15) 0 size-md(30)
+		@include sm
+			margin: 0 0 30px
 .question
 	margin-top: size(50)
+	& ~ .question
+		margin-top: size(30)
 	@include md
 		margin-top: size-md(50)
+		& ~ .question
+			margin-top: size-md(30)
+	@include sm
+		margin-top: 30px
+		& ~ .question
+			margin-top: 30px
 	details
 		-webkit-appearance: none
 		appearance: none
@@ -604,12 +639,19 @@
 		border-radius: size(25)
 		@include md
 			border-radius: size-md(25)
+		@include sm
+			border-radius: 25px
 		&>p
 			padding: 0 size(25) size(45) size(25)
 			user-select: none
 			color: var(--text-color-green)
 			@include md
 				padding: 0 size-md(25) size-md(45) size-md(25)
+			@include sm
+				padding: 0 25px 45px 25px
+				font-size: 14px
+			@include xs
+				font-size: 12px
 		summary
 			display: flex
 			-webkit-appearance: none
@@ -618,6 +660,8 @@
 			cursor: pointer
 			@include md
 				padding: size-md(25) size-md(25) size-md(24)
+			@include sm
+				padding: 25px 15px 25px 24px
 			h6
 				display: flex
 				align-items: center
@@ -627,6 +671,9 @@
 				font-family: var(--text-font)
 				font-weight: 600
 				user-select: none
+				@include sm
+					font-size: 12px
+					line-height: 1.8
 				&:after
 					content: ''
 					width: size(20)
@@ -636,31 +683,53 @@
 					border-bottom: size(1) solid var(--text-black)
 					transform: rotate(45deg)
 					transition: transform .3s ease-in-out
+					margin-left: size(10)
 					@include md
 						width: size-md(20)
 						height: size-md(20)
 						border-left: size-md(1) solid var(--text-black)
 						border-bottom: size-md(1) solid var(--text-black)
+						margin-left: size-md(10)
+					@include sm
+						flex: 0 0 13px
+						width: 13px
+						height: 13px
+						border-left: 1px solid var(--text-black)
+						border-bottom: 1px solid var(--text-black)
+						margin-left: 10px
+						align-self: flex-start
+						transform: rotate(-45deg)
 			&::marker,
 			&::-webkit-details-marker
 				display: none !important
 		&[open]
 			summary
+				padding-bottom: 0
 				h6
 					&:after
 						transform: rotate(-45deg)
 .files
 	padding: size(20) 0 size(155)
 	background-color: var(--bg-color-dark)
+	@include md
+		padding: size-md(20) 0 size-md(56)
+	@include sm
+		padding: 0  0 100px
 	&__outer
 		&-title
 			text-align: center
 			margin-bottom: size(70)
+			@include md
+				margin-bottom: size-md(70)
+			@include xs
+				margin-bottom: 45px
 
 .file
 	margin-bottom: size(25)
 	@include md
 		margin-bottom: size-md(25)
+	@include sm
+		margin-bottom: 56px
 	&__link
 		display: inline-flex
 		max-width: size(251)
@@ -676,6 +745,8 @@
 			color: var(--text-color-dark-disabled)
 		@include md
 			max-width: size-md(205)
+		@include sm
+			max-width: 100%
 		svg
 			flex: 0 0 size(20)
 			width: size(20)
@@ -688,29 +759,57 @@
 				height: size-md(20)
 				object-fit: contain
 				margin-top: size-md(5)
+			@include sm
+				flex: 0 0 20px
+				width: 20px
+				height: 20px
+				object-fit: contain
+				margin-top: 0
 		&-text
 			padding-left: size(30)
 			@include md
 				padding-left: size-md(30)
+			@include sm
+				padding-left: 30px
+				font-size: 14px
+				line-height: 1.7
 .footer
 	background-color: var(--text-color-dark)
 	padding: size(80) 0 size(57)
 	@include md
 		@include block-padding
+	@include sm
+		padding: 17px 0 77px
 	&__menu
+		@include sm
+			&.media
+				order: 3
+				margin-top: -20px
+			&.info
+				order: 4
+			&.companies
+				order: 5
+		@include sm
+			margin-top: 40px
 		&-title
 			font-weight: 600
 			line-height: 1.62
 			color: #F6F9FC
+			@include sm
+				font-size: 20px
 		&-list
 			list-style-type: none
 			margin-top: size(3)
 			@include md
 				margin-top: size-md(3)
+			@include sm
+				margin-top: 3px
 			li
 				margin-top: size(15)
 				@include md
 					margin-top: size-md(15)
+				@include sm
+					margin-top: 15px
 				a
 					text-decoration: none
 					color: #BFCDD6
@@ -720,9 +819,15 @@
 					transition: all .3s ease-in-out
 					&:hover
 						color: #ffffff
+					@include sm
+						font-size: 14px
+						line-height: 1.8
 		&-social
 			display: flex
 			justify-content: flex-end
+			@include sm
+				order: 2
+				margin-top: 73px
 			&-list
 				display: flex
 				flex-direction: column
@@ -734,6 +839,9 @@
 				height: 100%
 				@include md
 					width: size-md(20)
+				@include sm
+					width: 20px
+					height: 240px
 				li
 					display: block
 					a
@@ -746,18 +854,29 @@
 						@include md
 							width: size-md(20)
 							height: size-md(20)
+						@include sm
+							width: 20px
+							height: 20px
 						img
 							width: 100%
 							height: 100%
 							object-fit: contain
 	&__info
+		@include sm
+			order: 1
 		&-logo
 			@include md
 				max-width: 90%
+			@include sm
+				max-width: 189px
 		&-contacts
 			margin-top: size(13)
 			@include md
 				margin-top: size-md(13)
+			@include sm
+				display: flex
+				flex-direction: column
+				margin-top: 12px
 			a
 				text-decoration: none
 				display: inline-block
@@ -768,13 +887,20 @@
 				transition: all .3s ease-in-out
 				&:hover
 					opacity: .7
-					@include md
-						margin-top: size-md(23)
+				@include md
+					margin-top: size-md(23)
+				@include sm
+					margin-top: 16px
+					font-size: 20px
+					margin-bottom: 15px
 		&-payments
 			margin-top: size(113)
 			max-width: size(200)
 			@include md
 				max-width: size-md(200)
+			@include sm
+				max-width: 200px
+				margin-top: 49px
 			&-list
 				display: flex
 				list-style-type: none
@@ -789,6 +915,10 @@
 						flex: 0 0 size-md(40)
 						width: size-md(40)
 						max-height: size-md(15)
+					@include sm
+						flex: 0 0 40px
+						width: 40px
+						max-height: 15px
 					img
 						width: 100%
 						height: 100%
@@ -797,11 +927,23 @@
 		margin-top: size(61)
 		@include md
 			margin-top: size-md(80)
+		@include sm
+			order: 6
 		&-text
 			width: 100%
 			color: #ffffff
 			font-size: var(--small-font-size)
 			text-align: center
+			font-family: var(--text-font)
+			br
+				display: none
+			@include sm
+				max-width: 223px
+				font-size: 12px
+				margin: 0 auto
+				line-height: 22px
+				br
+					display: block
 
 .about
 	&__modal
