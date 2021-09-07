@@ -369,8 +369,15 @@
   background-color: rgba(2, 12, 32, 0.25);
   padding: 5.5555555556vw 3vw;
 }
+@media screen and (max-width: 1023px) {
+  .covid__outer {
+    padding: 7.8125vw 1vw;
+  }
+}
 @media screen and (max-width: 767px) {
   .covid__outer {
+    padding-right: 0;
+    padding-left: 0;
     flex-direction: column;
     background-color: transparent;
   }

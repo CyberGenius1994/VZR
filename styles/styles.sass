@@ -251,7 +251,11 @@
 	&__outer
 		background-color: rgba(2, 12, 32, .25)
 		padding: size(80) 3vw
+		@include md
+			padding: size-md(80) 1vw
 		@include sm
+			padding-right: 0
+			padding-left: 0
 			flex-direction: column
 			background-color: transparent
 		&-title
