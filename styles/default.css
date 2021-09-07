@@ -687,6 +687,22 @@ p {
   transform: translateX(0);
   transition: transform 0.3s ease-in-out;
 }
+@media screen and (max-width: 1023px) {
+  .more__link:after {
+    margin-left: 0.48828125vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  .more__link:after {
+    margin-left: 5px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .more__link {
+    letter-spacing: 0;
+    text-transform: none;
+  }
+}
 .more__link:hover {
   color: var(--text-color-dark-hover);
 }
@@ -736,6 +752,7 @@ p {
   align-items: center;
   align-content: center;
   justify-content: center;
+  padding: 15px;
 }
 .modal__bg {
   position: absolute;
@@ -758,6 +775,17 @@ p {
   overflow-y: auto;
   max-height: 100%;
 }
+@media screen and (max-width: 1023px) {
+  .modal__container {
+    padding: 4.8828125vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  .modal__container {
+    max-width: 100%;
+    padding: 45px 30px 30px;
+  }
+}
 .modal__close {
   position: absolute;
   right: 1.3888888889vw;
@@ -772,6 +800,22 @@ p {
   font-weight: bold;
   cursor: pointer;
 }
+@media screen and (max-width: 1023px) {
+  .modal__close {
+    right: 1.953125vw;
+    top: 1.953125vw;
+    width: 2.734375vw;
+    height: 2.734375vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  .modal__close {
+    right: 20px;
+    top: 20px;
+    width: 18px;
+    height: 18px;
+  }
+}
 .modal__close:before {
   content: "";
   position: absolute;
@@ -785,6 +829,24 @@ p {
   border-radius: 0.6944444444vw;
   transition: opacity 0.3s ease-in-out;
 }
+@media screen and (max-width: 1023px) {
+  .modal__close:before {
+    width: 3.3203125vw;
+    height: 0.5859375vw;
+    top: 0.9765625vw;
+    left: -0.29296875vw;
+    border-radius: 0.9765625vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  .modal__close:before {
+    width: 24px;
+    height: 4px;
+    top: 10px;
+    left: -3px;
+    border-radius: 10px;
+  }
+}
 .modal__close:after {
   content: "";
   position: absolute;
@@ -797,6 +859,24 @@ p {
   transform: rotate(135deg);
   border-radius: 0.6944444444vw;
   transition: opacity 0.3s ease-in-out;
+}
+@media screen and (max-width: 1023px) {
+  .modal__close:after {
+    width: 3.3203125vw;
+    height: 0.5859375vw;
+    top: 0.9765625vw;
+    left: -0.1953125vw;
+    border-radius: 0.9765625vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  .modal__close:after {
+    width: 24px;
+    height: 4px;
+    top: 10px;
+    left: -2px;
+    border-radius: 10px;
+  }
 }
 .modal:hover:before, .modal:hover:after {
   opacity: 0.6;

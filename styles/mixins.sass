@@ -1,20 +1,15 @@
 @mixin lg
 	@media screen and (min-width: 1024px)
 		@content
-
 @mixin md
 	@media screen and (max-width: 1023px)
 		@content
-
-
 @mixin sm
 	@media screen and (max-width: 767px)
 		@content
-
 @mixin slide
 	@media screen and (max-width: 560px)
 		@content
-
 @mixin xs
 	@media screen and (max-width: 479px)
 		@content
@@ -38,5 +33,5 @@
 	padding: size(80) 0
 	@include md
 		padding: size-md(56) 0
-	@include md
+	@include sm
 		padding: 56px 0

@@ -3,6 +3,7 @@ const swiper = new Swiper('.polices__items', {
   spaceBetween: 22,
   direction: 'horizontal',
   loop: true,
+  resizeObserver: true,
   navigation: {
     nextEl: '.polices__button-next',
     prevEl: '.polices__button-prev',
@@ -14,8 +15,11 @@ const swiper = new Swiper('.polices__items', {
     560: {
       slidesPerView: 2,
     },
-    1280: {
+    768: {
       slidesPerView: 3,
+    },
+    1280: {
+      slidesPerView: 4,
     }
   }
 });
@@ -25,6 +29,7 @@ const swiperNew = new Swiper('.reviews__items', {
   spaceBetween: 22,
   direction: 'horizontal',
   loop: true,
+  resizeObserver: true,
   navigation: {
     nextEl: '.reviews__button-next',
     prevEl: '.reviews__button-prev',
@@ -36,31 +41,11 @@ const swiperNew = new Swiper('.reviews__items', {
     560: {
       slidesPerView: 2,
     },
-    1280: {
+    768: {
       slidesPerView: 3,
-    }
-  }
-});
-
-const swiper2 = new Swiper('.news-slider', {
-  slidesPerView: 'auto',
-  spaceBetween: 22,
-  direction: 'horizontal',
-  loop: true,
-  autoHeight: false,
-  navigation: {
-    nextEl: '.abroad__button-next',
-    prevEl: '.abroad__button-prev',
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 'auto',
-    },
-    560: {
-      slidesPerView: 2,
     },
     1280: {
-      slidesPerView: 3,
+      slidesPerView: 4,
     }
   }
 });
@@ -78,6 +63,7 @@ const swiper3 = new Swiper('.swiper-container', {
   speed: 500,
   loop: true,
   autoHeight: false,
+  resizeObserver: true,
   pagination: {
     el: '.slider__pagination',
     type: 'bullets',
