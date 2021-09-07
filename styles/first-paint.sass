@@ -18,8 +18,8 @@
 		background-color: #ffffff
 		transition: transform .3s ease-in-out
 		box-shadow: var(--block-shadow)
-		padding: 11px 0
 		@include sm
+			padding: 11px 0
 			.open__form
 				display: flex
 				align-items: center
@@ -37,7 +37,7 @@
 				transition: all .3s ease-in-out
 				margin-left: auto
 				svg
-					fill: currentColor
+					color: #ffffff
 					width: 25px
 					height: auto
 				&:hover
@@ -46,7 +46,9 @@
 				&:active
 					color: #ffffff
 					background-color: var(--button-color-active)
-		svg
+		.header__logo svg
+
+			display: block
 			.earth,
 			.text
 				fill: rgb(72, 76, 100)
@@ -71,9 +73,13 @@
 				max-width: size-md(189)
 			@include xs
 				max-width: 189px
-			img
+			svg
 				width: 100%
-				height: auto
+				max-height: size(40)
+				@include md
+					max-height: size-md(40)
+				@include sm
+					max-height: 40px
 	&__block
 		margin-left: auto
 	&__outer
@@ -97,6 +103,12 @@
 					svg
 						width: size(20)
 						height: size(20)
+						@include md
+							width: size-md(20)
+							height: size-md(20)
+						@include xs
+							width: 20px
+							height: 20px
 .hero
 	position: relative
 	&__block

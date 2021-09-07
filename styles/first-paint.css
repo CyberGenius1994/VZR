@@ -24,9 +24,11 @@
   background-color: #ffffff;
   transition: transform 0.3s ease-in-out;
   box-shadow: var(--block-shadow);
-  padding: 11px 0;
 }
 @media screen and (max-width: 767px) {
+  .header.sticky {
+    padding: 11px 0;
+  }
   .header.sticky .open__form {
     display: flex;
     align-items: center;
@@ -45,7 +47,7 @@
     margin-left: auto;
   }
   .header.sticky .open__form svg {
-    fill: currentColor;
+    color: #ffffff;
     width: 25px;
     height: auto;
   }
@@ -58,8 +60,11 @@
     background-color: var(--button-color-active);
   }
 }
-.header.sticky svg .earth,
-.header.sticky svg .text {
+.header.sticky .header__logo svg {
+  display: block;
+}
+.header.sticky .header__logo svg .earth,
+.header.sticky .header__logo svg .text {
   fill: #484c64;
 }
 .header.sticky .header__link,
@@ -93,9 +98,19 @@
     max-width: 189px;
   }
 }
-.header__logo a img {
+.header__logo a svg {
   width: 100%;
-  height: auto;
+  max-height: 2.7777777778vw;
+}
+@media screen and (max-width: 1023px) {
+  .header__logo a svg {
+    max-height: 3.90625vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header__logo a svg {
+    max-height: 40px;
+  }
 }
 .header__block {
   margin-left: auto;
@@ -125,6 +140,18 @@
 .header__social-icons li a svg {
   width: 1.3888888889vw;
   height: 1.3888888889vw;
+}
+@media screen and (max-width: 1023px) {
+  .header__social-icons li a svg {
+    width: 1.953125vw;
+    height: 1.953125vw;
+  }
+}
+@media screen and (max-width: 479px) {
+  .header__social-icons li a svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .hero {
